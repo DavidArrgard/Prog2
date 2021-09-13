@@ -10,9 +10,6 @@ class Elev:
         else:
             return f"Hen heter {self.namn} och är {self.ålder} gammal och hen är ledsen D:"
 
-    def elev(self):
-        return self.namn + self.ålder
-
 
 elev1 = Elev("David", 18, "glad")
 elev2 = Elev("Albin", 18, "integlad")
