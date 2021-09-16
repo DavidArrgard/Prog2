@@ -9,7 +9,7 @@ def estpi(terms):
     return 4 * result
 
 
-y = estpi(100)
+y = estpi(10000000000000)
 print(y)
 
 n = 1000000
