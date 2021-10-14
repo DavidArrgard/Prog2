@@ -8,7 +8,6 @@ def estpi(terms):
         result += (-1.0)**n/(2.0*n+1.0)
     return 4 * result
 
-
 y = estpi(10000000000000)
 print(y)
 
