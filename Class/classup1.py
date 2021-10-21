@@ -2,6 +2,12 @@ class Djur:
     def __init__(self, name):
         self.namn = name
 
+    def fånga(x, y):
+        if x.hastighet < 30 and y.maxdjup >= x.maxdjup:
+            return True
+        else:
+            return False
+
 
 class Fagel(Djur):
     def __init__(self, name, vingspann):
@@ -30,3 +36,8 @@ class Haj(Fisk):
 haj = Haj("Haj", 20, 30)
 
 torsk = Torsk("Torsk", 30, 35)
+
+if Djur.fånga(torsk, haj) == True:
+    print("hajen fångade fisken")
+else:
+    print("Fisken kom undan")
