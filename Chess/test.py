@@ -1,0 +1,1 @@
+canvas.create_image(250,250, image=chessboard)
