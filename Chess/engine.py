@@ -17,8 +17,6 @@ class Game():
                          'Q': self.getQmoves, 'K': self.getKmoves}
         self.whiteToMove = True
         self.moveList = []
-        self.whiteKPos = (7, 4)
-        self.blackKPos = (0, 4)
 
 
     def makeMove(self, move):
@@ -26,10 +24,6 @@ class Game():
         self.board[move.endRow][move.endCol] = move.movePiece
         self.moveList.append(move)
         self.whiteToMove = not self.whiteToMove
-        if move.movePiece == 'wK':
-            self.whiteKPos = (move.endRow, move.endCol)
-        if move.movePiece == 'bK':
-            self.whiteKPos = (move.endRow, move.endCol)
 
     def undoMove(self):
         if len(self.moveList) != 0:
@@ -37,37 +31,9 @@ class Game():
             self.board[move.startRow][move.startCol] = move.movePiece
             self.board[move.endRow][move.endCol] = move.capuredPiece
             self.whiteToMove = not self.whiteToMove
-            if move.movePiece == 'wK':
-                self.whiteKPos = (move.endRow, move.endCol)
-            if move.movePiece == 'bK':
-                self.whiteKPos = (move.endRow, move.endCol)
 
     def vMoves(self):
-        moves = self.possibleMoves()
-        for i in range(len(moves)-1, -1, -1):
-            self.makeMove(moves[i])
-            self.whiteToMove = not self.whiteToMove
-            if self.inC():
-                moves.remove[moves[i]]
-            self.whiteToMove = not self.whiteToMove
-            self.undoMove()
-        return moves
-
-    def inC(self):
-        if self.whiteToMove:
-            return self.underAttack(self.whiteKPos[0], self.whiteKPos[1])
-        else:
-            return self.underAttack(self.blackKPos[0], self.blackKPos[1])
-
-    def underAttack(self, r, c):
-        self.whiteToMove = not self.whiteToMove
-        oppMove = self.vMoves()
-        self.whiteToMove = not self.whiteToMove
-        for move in oppMove:
-            if move.endRow == r and move.endCol == c:
-                self.whiteToMove = not self.whiteToMove
-                return True
-        return False
+        return self.possibleMoves()
 
     def possibleMoves(self):
         m = []

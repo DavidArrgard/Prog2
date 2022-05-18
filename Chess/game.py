@@ -9,6 +9,7 @@ SQ_size = height/8
 MAX_FPS = 15
 images = {}
 
+
 def loadImages():   
     pieces = ['wp','wR','wN','wQ','wK','wB','bp','bR','bN','bQ','bK','bB']
     for piece in pieces:
@@ -86,6 +87,7 @@ def drawPieces(screen, board):
             if piece != "--":
                 screen.blit(images[piece], p.Rect(c*SQ_size,r*SQ_size, SQ_size, SQ_size))
 
-
+"""
 if __name__ == "__main__":
     main()
+"""
