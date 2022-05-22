@@ -1,3 +1,4 @@
+//Vad för information ett Event ska ha när den skapas
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -18,6 +19,10 @@ const eventSchema = new Schema({
     date: {
         type: Date,
         required: true
+    },
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 });
 
