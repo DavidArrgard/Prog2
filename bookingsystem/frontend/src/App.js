@@ -80,9 +80,9 @@ class App extends Component {
               {!this.state.token && (
                 <Route path="/auth" element={<AuthPage />} />
               )}
-              <Route path="/bookings" element={<BookingsPage />} />
+              <Route path="/events" element={<EventsPage />} />
               {this.state.token && (
-                <Route path="/events" element={<EventsPage />} />
+                <Route path="/bookings" element={<BookingsPage />} />
               )}
             </Routes>
           </main>
